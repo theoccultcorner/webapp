@@ -1,3 +1,7 @@
+3.times do |topic|
+  Topic.create!(
+    title: "Topic #{topic}"
+  )
 10.times do |blog|
   Blog.create!(
     title: "my blog posts #{Blog}",
@@ -5,7 +9,8 @@
     fbdbbhfghfghgfngfn
     fgnfgnfgnfgnfg
     fgnfgnfgnfgnfgfgnfgnfgnfgn
-    fgnfnfgnfgnfgnfgnfgngf"
+    fgnfnfgnfgnfgnfgnfgngf",
+    topic_id: Topic.last.id
   )
 end
 
@@ -20,10 +25,10 @@ percent_utilized: 15
 
    puts "5 skills created"
 
-   9.times do |portfolio_item|
+   8.times do |portfolio_item|
      Portfolio.create!(
      title: "portfolio title: #{portfolio_item}",
-     subtitle: "my great service",
+     subtitle: "Rudy on Rails",
      body: "fdhhfgjgjdjfhfhdfhddhdhdhddhdhdhdhdhddh
      dfhfdhdhfdhdhdhdhdhdf
      dfhdfhdhdfhdfhdhdhdhd",
@@ -31,3 +36,24 @@ percent_utilized: 15
      thumb_image: "http://via.placeholder.com/350x200"
    )
  end
+ 1.times do |portfolio_item|
+   Portfolio.create!(
+   title: "portfolio title: #{portfolio_item}",
+   subtitle: "Angular",
+   body: "fdhhfgjgjdjfhfhdfhddhdhdhddhdhdhdhdhddh
+   dfhfdhdhfdhdhdhdhdhdf
+   dfhdfhdhdfhdfhdhdhdhd",
+   main_image: "http://via.placeholder.com/600x400",
+   thumb_image: "http://via.placeholder.com/350x200"
+ )
+end
+puts "9 portfolio items created"
+end
+
+3.times do |technology|
+  Portfolio.last.technologies.create!(
+    name: "Technology #{technology}"
+
+  )
+end
+  puts "3 technoloies created"
