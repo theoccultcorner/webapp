@@ -4,7 +4,7 @@ class PortfoliosController < ApplicationController
   end
 
 def angular
-@angular_portfolio_items = Portfolio.angular
+@angular_portfolio_item = Portfolio.angular
 end
 
 
@@ -45,7 +45,7 @@ end
  end
 
  def destroy
-@portfolio_item = Portfolio.find(params[:id])
+@portfolio_items = Portfolio.find(params[:id])
 
    @portfolio_item.destroy
 
