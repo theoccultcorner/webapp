@@ -61,7 +61,7 @@ private
 def portfolio_params
   params.require(:portfolio).permit(:title,
                                     :subtitle,
-                                    :technologies_attributes: [:name]
+                                    :technologies_attributes [:name]
                                     )
     end
 end
